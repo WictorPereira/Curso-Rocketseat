@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --img-sun: url(./assets/sun.svg);
+    --img-moon: url(./assets/moon.svg)
+    
+}
+
+.black{
+    background-color: #292C35;   
+    
+}
+
+.white{   
+        background: black var(--img-moon) no-repeat left  
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+
+.button-container{
+    position: relative;
+    width: 64px;
+    margin: 25% auto;
+}
+
+button{
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%); 
+    animation: slide-back 0.2s;
+    cursor: pointer;
+}
+
+.black .button-container button {
+    animation: slide-in 0.2s forwards;
+  }
+
+span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: black;
+    border: 1px solid grey;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+    background: black var(--img-sun) no-repeat right;
+
+}
+
+@keyframes slide-in {
+    from {
+      left: 0;
+    }
+    to {
+      left: 50%;
+    }
+  }
+  
+  @keyframes slide-back {
+    from {
+      left: 50%;
+    }
+    to {
+      left: 0;
+    }
+  }
+  
